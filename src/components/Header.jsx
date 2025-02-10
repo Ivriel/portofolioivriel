@@ -47,7 +47,7 @@ function Header({ scrollToSection, refs }) {
             <a
               className="flex items-center justify-center bg-white text-black gap-2 px-[20px] py-[10px] rounded-md hover:bg-gray-300"
               title="Download CV"
-              href="/CV-ivriel.pdf"
+              href="/CV-Ivriel.pdf"
               download="CV-Ivriel.pdf"
             >
               <img src={IconButton} alt="Download Icon" className="w-5 h-5" />
