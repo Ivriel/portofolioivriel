@@ -67,7 +67,7 @@ function Home(props, ref) {
           data-aos-delay="2800"
           className="flex items-center justify-center bg-white text-black gap-2 px-6 py-[11px] rounded-md hover:bg-gray-300 text-sm font-medium w-fit mt-8"
           title="Download CV"
-          href="/MyCV.pdf"
+          href="/CV-Ivriel.pdf"
           download="CV_Ivriel.pdf"
         >
           <img src={IconButton} alt="Download Icon" className="w-4 h-4" />
