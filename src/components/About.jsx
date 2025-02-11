@@ -15,7 +15,7 @@ function About(props, ref2) {
           setStartAnimation(true);
         }
       },
-      { threshold: 0.5 } // Animasi mulai saat 50% elemen terlihat
+      { threshold: 0.9 } // Animasi mulai persen elemen yang masuk viewport
     );
 
     if (aboutRef.current) {
