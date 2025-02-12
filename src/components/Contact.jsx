@@ -2,7 +2,9 @@ import { forwardRef } from "react"
 
 function Contact(props,ref4) {
   return (
-    <div ref={ref4} className="text-white h-96 bg-yellow-400">Kontak</div>
+    <div ref={ref4} className="text-white w-full mt-40 h-[250px] bg-red-500" id="contact">
+      Kontak
+    </div>
   )
 }
 
