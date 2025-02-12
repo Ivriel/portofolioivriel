@@ -29,7 +29,7 @@ function Project(props, ref) {
         "Tailwind CSS" 
       ],
       link:"https://gideon-blog.vercel.app/",
-      repository:"https://gideon-blog.vercel.app/"
+      repository:"https://github.com/Ivriel/Update-GIDEON-S-BLOG"
     },
     {
       image: Cuaca,
@@ -73,16 +73,28 @@ function Project(props, ref) {
                 ))}
                 </div>
                 <div className="flex gap-4 mt-4">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer hover:text-gray-600">
-                    <LinkIcon className="group-hover:text-gray-600"/>
-                    <span className="group-hover:text-gray-600">View Site</span>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-400 transition-colors duration-0"
+                  >
+                    <LinkIcon className="w-6 h-6 text-white group-hover:text-gray-400 transition-colors duration-0" />
+                    <span className="group-hover:text-gray-400 transition-colors duration-0">
+                      View Site
+                    </span>
                   </a>
               </div>
               <div className="flex gap-4 mt-4">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 cursor-pointer hover:text-gray-600">
-                    <GithubIcon className="group-hover:text-gray-600"/>
-                    <span className="group-hover:text-gray-600">View Repository</span>
-                  </a>
+                    <a 
+                      href={project.repository} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-600"
+                    >
+                      <GithubIcon className="text-white group-hover:text-gray-600 transition-colors duration-0" />
+                      <span className="group-hover:text-gray-600 transition-colors duration-0">View Repository</span>
+                    </a>
               </div>
           </div>
         </div>

@@ -24,18 +24,18 @@ function Home(props, ref) {
          data-aos-delay="1200"
         >FRONTEND DEVELOPER</h1>
         <div className="flex gap-4 mt-10">
-          <a
-            data-aos="zoom-in"
-            data-aos-duration="500"
-            data-aos-delay="1600"
-            href="https://www.instagram.com/wynsc_u13/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 group cursor-pointer hover:text-gray-600"
-          >
-            <InstagramIcon className="group-hover:text-gray-600" />
-            <span className="group-hover:text-gray-600">Instagram</span>
-          </a>
+        <a
+        data-aos="zoom-in"
+        data-aos-duration="500"
+        data-aos-delay="1600"
+        href="https://www.instagram.com/wynsc_u13/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group transition-colors flex items-center space-x-2 cursor-pointer text-white hover:text-gray-600"
+        >
+        <InstagramIcon className="transition-colors" />
+        <span className="transition-colors">Instagram</span>
+        </a>
           <a
           data-aos="zoom-in"
           data-aos-duration="500"
@@ -43,24 +43,24 @@ function Home(props, ref) {
           href="https://github.com/Ivriel"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-2 group cursor-pointer hover:text-gray-600"
+          className="flex items-center space-x-2 group cursor-pointer hover:text-gray-600 transition-colors duration-200"
           >
-          <GithubIcon className="group-hover:stroke-gray-600" />
-          <span className="group-hover:text-gray-600">Github</span>
-        </a>
+          <GithubIcon className="group-hover:stroke-gray-600 transition-colors duration-200" />
+          <span className="group-hover:text-gray-600 transition-colors duration-200">Github</span>
+          </a>
           <a
           data-aos="zoom-in"
           data-aos-duration="500"
           data-aos-delay="2500"
           href="https://mail.google.com/mail/?view=cm&to=gunawanivriel@gmail.com"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center space-x-2 group cursor-pointer text-white hover:text-gray-600 transition-colors duration-100"
           >
-            <GmailIcon className="group-hover:text-gray-600" />
-            <span className="group-hover:text-gray-600">Gmail</span>
-          </a>
+          <GmailIcon className="transition-colors" />
+          <span className="transition-colors">Gmail</span>
+         </a>
         </div>
-
         <a
           data-aos="zoom-out"
           data-aos-duration="500"

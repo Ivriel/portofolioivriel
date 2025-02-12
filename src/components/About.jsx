@@ -66,19 +66,19 @@ function About(props, ref2) {
       </div>
 
       <div ref={aboutRef} className="flex justify-between mt-10">
-        <Link to="/target-halaman" className="text-white text-center">
+        <Link to="/projects" className="text-white text-center">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[64px] font-bold">{projects}+</span>
             <span className="text-gray-400">Projects completed</span>
           </div>
         </Link>
-        <Link to="/target-halaman" className="text-white text-center">
+        <Link to="/competition" className="text-white text-center">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[64px] font-bold">{competitions}+</span>
             <span className="text-gray-400">Competitions participated</span>
           </div>
         </Link>
-        <Link to="/target-halaman" className="text-white text-center">
+        <Link to="/certificates" className="text-white text-center">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[64px] font-bold">{certificates}+</span>
             <span className="text-gray-400">Certificates earned</span>
