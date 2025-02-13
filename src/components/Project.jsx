@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef,Link } from "react";
 import ArrowRight from "./ArrowRight";
 import Fawziuiux from "../assets/FAWZIUIUXPICTURE.png";
 import Gideonsblog from "../assets/GIDEONSBLOGPICTURE.png";
@@ -50,15 +50,16 @@ function Project(props, ref) {
         <h1 className="font-medium text-[28px] border border-white px-8 py-2 rounded-full">
           Projects
         </h1>
-        <a
+        <Link
           className="group flex items-center gap-2 cursor-pointer transition-colors"
-          href="projects"
+          to="/projects"
+          target="_blank"
         >
           <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors">
             See More
           </p>
           <ArrowRight className="w-6 h-6 text-white group-hover:text-gray-400 transition-colors" />
-        </a>
+        </Link>
       </div>
       <div>
         {projects.map((project,index) => (
