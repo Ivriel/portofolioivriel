@@ -1,6 +1,6 @@
 import { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Homepage from "./Pages/Homepage";
 import Projects from "./Pages/Projects";
@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/projects" element={<Projects />} />
@@ -39,7 +39,7 @@ function App() {
         <Route path="/certificates" element={<Certificates />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
