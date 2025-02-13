@@ -52,7 +52,7 @@ function Project(props, ref) {
         </h1>
         <a
           className="group flex items-center gap-2 cursor-pointer transition-colors"
-          href="/projects"
+          href="projects"
         >
           <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors">
             See More
