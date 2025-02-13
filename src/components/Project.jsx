@@ -54,8 +54,6 @@ function Project(props, ref) {
         <Link
           className="group flex items-center gap-2 cursor-pointer transition-colors"
           to="/projects"
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors">
             See More
