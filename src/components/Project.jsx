@@ -87,15 +87,15 @@ function Project(props, ref) {
                   </a>
               </div>
               <div className="flex gap-4 mt-4">
-                    <a 
-                      href={project.repository} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-600"
-                    >
-                      <GithubIcon className="text-white group-hover:text-gray-600 transition-colors duration-0" />
-                      <span className="group-hover:text-gray-600 transition-colors duration-0">View Repository</span>
-                    </a>
+                  <a 
+                    href={project.repository} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-600 transition-colors duration-200"
+                  >
+                    <GithubIcon className="text-white group-hover:text-gray-600 transition-colors duration-200" />
+                    <span className="group-hover:text-gray-600 transition-colors duration-200">View Repository</span>
+                  </a>
               </div>
           </div>
         </div>
