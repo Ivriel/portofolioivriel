@@ -91,12 +91,11 @@ function Project(props, ref) {
                   href={project.repository}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 cursor-pointer transition-colors text-white hover:text-gray-600"
+                  className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-600 transition-colors duration-75"
                 >
-                  <GithubIcon className="transition-colors group-hover:text-gray-600" />
-                  <span className="transition-colors group-hover:text-gray-600">View Repository</span>
+                  <GithubIcon className="group-hover:text-gray-600" />
+                  <span className="group-hover:text-gray-600">View Repository</span>
                 </a>
-
               </div>
             </div>
           </div>
