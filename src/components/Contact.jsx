@@ -12,7 +12,7 @@ function Contact(props,ref4) {
               See more project
               </Link>
             </button>
-            <button className="border-2 border-black bg-black text-white px-4 py-2 rounded-lg font-semibold text-[16px] hover:bg-slate-600 hover:border-slate-600">
+            <button className="border-2 border-black bg-black text-white px-4 py-2 rounded-lg font-semibold text-[16px] hover:bg-[#000000B3] hover:border-transparent">
             <a href="https://wa.link/adbxh7" className="flex gap-2" target="_blank" rel="noopener noreferrer">
               <PhoneIcon />
               Contact Me

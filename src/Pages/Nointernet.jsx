@@ -31,7 +31,7 @@ function NoInternet() {
         <WifiOff className="w-16 h-16 text-red-500" />
         <h1 className="text-3xl font-bold">Oops! No Internet Connection</h1>
         <p className="text-lg text-gray-300 max-w-md">
-          Sepertinya kamu sedang offline. Periksa koneksi internetmu dan coba lagi.
+          Sepertinya anda sedang offline. Periksa koneksi internet anda dan coba lagi.
         </p>
         <motion.button
           whileHover={{ scale: 1.1 }}

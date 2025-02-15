@@ -27,7 +27,7 @@ function NotFound() {
         transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
         className="text-xl mb-6"
       >
-        Halaman yang Anda cari tidak ditemukan
+        Halaman yang anda cari tidak ditemukan
       </motion.p>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
