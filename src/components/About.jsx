@@ -51,13 +51,13 @@ function About(props, ref2) {
   return (
     <div ref={ref2} className="mt-[70px] text-white" id="about">
       <div className="flex justify-between w-full">
-        <div>
+        <div data-aos="fade" data-aps-duration="600" >
           <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px]">
             About Me
           </h1>
         </div>
         <div>
-          <p className="text-justify w-[850px]">
+          <p className="text-justify w-[850px]" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
             Saya adalah siswa di SMKN 8 Malang yang sedang menempuh pendidikan di jurusan Rekayasa Perangkat Lunak. Saya tertarik dengan dunia pemrograman dan menjadi seorang Frontend Web Developer.
             Saya memiliki kemampuan dalam membuat website berdasarkan desain yang diberikan. Saya juga memiliki kemampuan dalam menggunakan HTML, CSS, dan JavaScript.
             Saya menggunakan framework React dan juga Tailwind CSS sebagai tools utama dalam pembuatan website.

@@ -11,22 +11,22 @@ function Home(props, ref) {
       <div className="w-[718px]">
         <h4 className="text-[#FFFFFFCC]" 
         data-aos="fade-right"
-        data-aos-duration="500"
+        data-aos-duration="200"
         >HELLO, IM</h4>
         <h1 className="font-bold text-[60px] mt-6"
         data-aos="fade-right"
-        data-aos-duration="500"
+        data-aos-duration="200"
         data-aos-delay="800"
         >IVRIEL DEI GRATIA GUNAWAN</h1>
         <h1 className="text-[#FFFFFFCC] text-[25px] mt-8"
          data-aos="fade-right"
-         data-aos-duration="500"
+         data-aos-duration="200"
          data-aos-delay="1200"
         >FRONTEND DEVELOPER</h1>
         <div className="flex gap-4 mt-10">
         <a
         data-aos="zoom-in"
-        data-aos-duration="500"
+        data-aos-duration="200"
         data-aos-delay="1600"
         href="https://www.instagram.com/wynsc_u13/"
         target="_blank"
@@ -38,7 +38,7 @@ function Home(props, ref) {
         </a>
           <a
           data-aos="zoom-in"
-          data-aos-duration="500"
+          data-aos-duration="200"
           data-aos-delay="2100"
           href="https://github.com/Ivriel"
           target="_blank"
@@ -50,7 +50,7 @@ function Home(props, ref) {
           </a>
           <a
           data-aos="zoom-in"
-          data-aos-duration="500"
+          data-aos-duration="200"
           data-aos-delay="2500"
           href="https://mail.google.com/mail/?view=cm&to=gunawanivriel@gmail.com"
           target="_blank"
@@ -63,7 +63,7 @@ function Home(props, ref) {
         </div>
         <a
           data-aos="zoom-out"
-          data-aos-duration="500"
+          data-aos-duration="200"
           data-aos-delay="2800"
           className="flex items-center justify-center bg-white text-black gap-2 px-6 py-[11px] rounded-md hover:bg-gray-300 text-sm font-medium w-fit mt-8"
           title="Download CV"

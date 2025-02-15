@@ -56,10 +56,10 @@ function FAQ(props,ref3) {
 
   return (
     <div ref={ref3} className="text-white w-full mt-24">
-      <h1 className="font-medium text-[28px] border border-white px-12 py-2 rounded-full w-fit">
+      <h1 className="font-medium text-[28px] border border-white px-12 py-2 rounded-full w-fit" data-aos="fade-right">
           FAQ
       </h1>
-      <div className="mt-8">
+      <div className="mt-8" data-aos="fade-up" data-aos-delay="500">
         {faqs.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}
