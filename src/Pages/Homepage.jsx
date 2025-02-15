@@ -5,6 +5,7 @@ import About from "../components/About.jsx";
 import Project from "../components/Project.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Contact from "../components/Contact.jsx";
+import Footer from "../components/Footer.jsx";
 import NoInternet from "./Nointernet.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
@@ -55,6 +56,7 @@ function Homepage() {
       <Project ref={ref3} />
       <FAQ ref={ref4} />
       <Contact ref={ref5} />
+      <Footer scrollToSection={scrollToSection} refs={{ ref1: ref, ref2, ref3, ref4, ref5 }}/>
     </div>
   );
 }
