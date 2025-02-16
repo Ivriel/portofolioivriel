@@ -46,6 +46,12 @@ function Project(props, ref) {
       repository: "https://github.com/Ivriel/website-cuaca"
     }
   ]
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.open("https://myapp.vercel.app/projects", "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div ref={ref} className="text-white w-full mt-40" id="project">
       <div className="flex justify-between w-full items-center" data-aos="zoom-in" data-aos-duration="600">
@@ -55,6 +61,7 @@ function Project(props, ref) {
         <Link
           className="group flex items-center gap-2 cursor-pointer transition-colors"
           to="/projects"
+          onClick={handleClick}
           data-aos="zoom-out" 
           data-aos-duration="600"
           data-aos-delay="300"
