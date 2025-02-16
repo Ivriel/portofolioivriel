@@ -48,17 +48,6 @@ function About(props, ref2) {
     }
   }, [startAnimation]);
 
-  const links = {
-    halaman1: "https://portofolioivriel.vercel.app/projects",
-    halaman2: "https://portofolioivriel.vercel.app/competition",
-    halaman3: "https://portofolioivriel.vercel.app/certificates",
-  };  
-
-  const handleClick = (url, e) => {
-    e.preventDefault();
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <div ref={ref2} className="mt-[70px] text-white px-6 lg:px-0" id="about">
       <div className="flex flex-col lg:flex-row justify-between w-full">
@@ -77,19 +66,19 @@ function About(props, ref2) {
       </div>
 
       <div ref={aboutRef} className="flex flex-col sm:flex-row justify-between mt-10 space-y-6 sm:space-y-0">
-        <Link to="/projects" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(links.halaman1, e)}>
+        <Link to="/projects" className="text-white text-center w-full sm:w-fit" >
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{projects}+</span>
             <span className="text-gray-400">Projects completed</span>
           </div>
         </Link>
-        <Link to="/competition" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(links.halaman2, e)}>
+        <Link to="/competition" className="text-white text-center w-full sm:w-fit" >
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{competitions}+</span>
             <span className="text-gray-400">Competitions participated</span>
           </div>
         </Link>
-        <Link to="/certificates" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(links.halaman3, e)}>
+        <Link to="/certificates" className="text-white text-center w-full sm:w-fit">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{certificates}+</span>
             <span className="text-gray-400">Certificates earned</span>
