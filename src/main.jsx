@@ -31,7 +31,7 @@ function App() {
   }
 
   return (
-    <BrowserRouter basename={import.meta.env.VITE_BASENAME || "/"}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/projects" element={<Projects />} />
