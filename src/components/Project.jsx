@@ -1,14 +1,18 @@
 import { forwardRef } from "react";
 import ArrowRight from "./ArrowRight";
-import Fawziuiux from "../assets/FAWZIUIUXPICTURE.png";
-import Gideonsblog from "../assets/GIDEONSBLOGPICTURE.png";
-import Cuaca from "../assets/CUACAPICTURE.png";
+import Fawziuiux from "../assets/projects/FAWZIUIUXPICTURE.png";
+import Gideonsblog from "../assets/projects/GIDEONSBLOGPICTURE.png";
+import Cuaca from "../assets/projects/CUACAPICTURE.png";
 import GithubIcon from "./GithubIcon";
 import LinkIcon from "./LinkIcon";
 import ChipText from "./ChipText";
 import { Link } from "react-router-dom";
 
 function Project(props, ref) {
+  function handleClick(e, path) {
+    e.preventDefault(); // Mencegah navigasi bawaan React Router
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
   const projects = [
     {
       image: Fawziuiux,
@@ -54,6 +58,7 @@ function Project(props, ref) {
         <Link
           className="group flex items-center gap-2 cursor-pointer transition-colors"
           to="/projects"
+          onClick={(e) => handleClick(e, "/projects")}
           data-aos="zoom-out" 
           data-aos-duration="600"
           data-aos-delay="300"

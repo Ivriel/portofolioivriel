@@ -3,12 +3,18 @@ import { Link } from "react-router-dom"
 import BGContact from "../assets/BG-Contact-Section.png"
 import PhoneIcon from "./PhoneCall"
 function Contact(props,ref4) {
+
+  function handleClick(e, path) {
+    e.preventDefault(); // Mencegah navigasi bawaan React Router
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div ref={ref4} className="text-white w-full flex justify-between items-center px-10 mt-32 h-[250px] bg-cover rounded-lg mb-10" id="contact" style={{backgroundImage:`url(${BGContact})`}} data-aos="zoom-in">
           <h1 className="text-black font-semibold text-[35px]" data-aos="zoom-out" data-aos-delay="300">Interested working with Me?</h1>
           <div className="flex gap-4">
             <button className="border-2 border-black text-black px-4 py-2 rounded-lg font-semibold text-[16px] hover:bg-slate-200 hover:border-black" data-aos="fade-up" data-aos-delay="600">
-              <Link to="/projects">
+              <Link to="/projects" onClick={(e) => handleClick(e, "/projects")}>
               See more project
               </Link>
             </button>

@@ -48,16 +48,21 @@ function About(props, ref2) {
     }
   }, [startAnimation]);
 
+  function handleClick(e, path) {
+    e.preventDefault(); // Mencegah navigasi bawaan React Router
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <div ref={ref2} className="mt-[70px] text-white" id="about">
-      <div className="flex justify-between w-full">
-        <div data-aos="fade" data-aps-duration="600" >
-          <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px]">
-            About Me
-          </h1>
+    <div ref={ref2} className="mt-[70px] text-white px-6 lg:px-0" id="about">
+      <div className="flex flex-col lg:flex-row justify-between w-full">
+        <div>
+        <h1 data-aos="flip-up" data-aos-duration="1000" className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px] w-max mb-6">
+        About Me
+        </h1>
         </div>
         <div>
-          <p className="text-justify w-[850px]" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
+          <p className="text-justify sm:w-[600px] md:w-[700px] lg:w-[850px] max-w-full px-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
             Saya adalah siswa di SMKN 8 Malang yang sedang menempuh pendidikan di jurusan Rekayasa Perangkat Lunak. Saya tertarik dengan dunia pemrograman dan menjadi seorang Frontend Web Developer.
             Saya memiliki kemampuan dalam membuat website berdasarkan desain yang diberikan. Saya juga memiliki kemampuan dalam menggunakan HTML, CSS, dan JavaScript.
             Saya menggunakan framework React dan juga Tailwind CSS sebagai tools utama dalam pembuatan website.
@@ -65,22 +70,22 @@ function About(props, ref2) {
         </div>
       </div>
 
-      <div ref={aboutRef} className="flex justify-between mt-10">
-        <Link to="/projects" className="text-white text-center">
+      <div ref={aboutRef} className="flex flex-col sm:flex-row justify-between mt-10 space-y-6 sm:space-y-0">
+        <Link to="/projects" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(e, "/projects")}>
           <div className="flex flex-col items-center gap-6">
-            <span className="text-[64px] font-bold">{projects}+</span>
+            <span className="text-[50px] sm:text-[64px] font-bold">{projects}+</span>
             <span className="text-gray-400">Projects completed</span>
           </div>
         </Link>
-        <Link to="/competition" className="text-white text-center">
+        <Link to="/competition" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(e, "/competition")}>
           <div className="flex flex-col items-center gap-6">
-            <span className="text-[64px] font-bold">{competitions}+</span>
+            <span className="text-[50px] sm:text-[64px] font-bold">{competitions}+</span>
             <span className="text-gray-400">Competitions participated</span>
           </div>
         </Link>
-        <Link to="/certificates" className="text-white text-center">
+        <Link to="/certificates" className="text-white text-center w-full sm:w-fit" onClick={(e) => handleClick(e, "/certificates")}>
           <div className="flex flex-col items-center gap-6">
-            <span className="text-[64px] font-bold">{certificates}+</span>
+            <span className="text-[50px] sm:text-[64px] font-bold">{certificates}+</span>
             <span className="text-gray-400">Certificates earned</span>
           </div>
         </Link>
