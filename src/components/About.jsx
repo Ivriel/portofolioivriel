@@ -48,6 +48,10 @@ function About(props, ref2) {
     }
   }, [startAnimation]);
 
+  const handleClick = (path) => {
+    window.open(path, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div ref={ref2} className="mt-[70px] text-white px-6 lg:px-0" id="about">
       <div className="flex flex-col lg:flex-row justify-between w-full">
@@ -66,19 +70,19 @@ function About(props, ref2) {
       </div>
 
       <div ref={aboutRef} className="flex flex-col sm:flex-row justify-between mt-10 space-y-6 sm:space-y-0">
-        <Link to="/projects" className="text-white text-center w-full sm:w-fit" >
+        <Link onClick={() => handleClick("/projects")} className="text-white text-center w-full sm:w-fit" >
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{projects}+</span>
             <span className="text-gray-400">Projects completed</span>
           </div>
         </Link>
-        <Link to="/competition" className="text-white text-center w-full sm:w-fit" >
+        <Link onClick={() => handleClick("/competition")} className="text-white text-center w-full sm:w-fit" >
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{competitions}+</span>
             <span className="text-gray-400">Competitions participated</span>
           </div>
         </Link>
-        <Link to="/certificates" className="text-white text-center w-full sm:w-fit">
+        <Link onClick={() => handleClick("/certificates")} className="text-white text-center w-full sm:w-fit">
           <div className="flex flex-col items-center gap-6">
             <span className="text-[50px] sm:text-[64px] font-bold">{certificates}+</span>
             <span className="text-gray-400">Certificates earned</span>
