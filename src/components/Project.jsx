@@ -9,10 +9,7 @@ import ChipText from "./ChipText";
 import { Link } from "react-router-dom";
 
 function Project(props, ref) {
-  function handleClick(e, path) {
-    e.preventDefault(); // Mencegah navigasi bawaan React Router
-    window.open(path, "_blank", "noopener,noreferrer");
-  };
+
   const projects = [
     {
       image: Fawziuiux,
@@ -58,7 +55,6 @@ function Project(props, ref) {
         <Link
           className="group flex items-center gap-2 cursor-pointer transition-colors"
           to="/projects"
-          onClick={(e) => handleClick(e, "/projects")}
           data-aos="zoom-out" 
           data-aos-duration="600"
           data-aos-delay="300"
