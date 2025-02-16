@@ -49,7 +49,7 @@ function Project(props, ref) {
 
   const handleClick = (e) => {
     e.preventDefault();
-    window.open("https://portofolioivriel.vercel.app/projects", "_blank", "noopener,noreferrer");
+    window.open("/projects", "_blank", "noopener,noreferrer");
   };
 
   return (
