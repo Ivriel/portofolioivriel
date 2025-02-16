@@ -88,12 +88,9 @@ function Projects() {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-
   const itemsPerPage = currentPage === 1 ? 6 : 3;
   const startIndex = currentPage === 1 ? 0 : 6; // Page 1 starts at index 0, Page 2 starts at index 6
   const paginatedItems = projectsFile.slice(startIndex, startIndex +itemsPerPage);
-  
-  
 
   return (
     <div className="text-white w-full mt-20 px-[50px] mb-10" id="projects">
