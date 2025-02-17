@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import UJILEVEL from "../assets/competitions/ligaSMK.png";
 import AWS from "../assets/competitions/logoaws.png";
-import PLAYIT from "../assets/competitions/PlayIT.png";
+import PLAYIT from "../assets/competitions/playIT.png";
 
 function Competition() {
   const [selectedImage, setSelectedImage] = useState(null);
