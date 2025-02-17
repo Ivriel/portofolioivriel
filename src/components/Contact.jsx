@@ -2,9 +2,8 @@ import { forwardRef } from "react"
 import { Link } from "react-router-dom"
 import BGContact from "../assets/BG-Contact-Section.png"
 import PhoneIcon from "./PhoneCall"
+
 function Contact(props,ref4) {
-
-
   return (
     <div ref={ref4} className="text-white w-full flex justify-between items-center px-10 mt-32 h-[250px] bg-cover rounded-lg mb-10" id="contact" style={{backgroundImage:`url(${BGContact})`}} data-aos="zoom-in">
           <h1 className="text-black font-semibold text-[35px]" data-aos="zoom-out" data-aos-delay="300">Interested working with Me?</h1>
