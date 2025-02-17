@@ -18,7 +18,7 @@ function Projects() {
       description: "This is a project description",
       tech: ["React", "Tailwind CSS"],
       image: FAWZIUIUX,
-      link: "https://fawziuiux.vercel.app/",
+      link: "https://github.com/Ivriel/FAWZIUIUX",
       repository: "https://github.com/Ivriel/FAWZIUIUX"
     },
     {
