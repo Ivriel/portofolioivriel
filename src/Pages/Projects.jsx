@@ -15,7 +15,7 @@ function Projects() {
   const projectsFile = [
     {
       title: "FAWIUIUX",
-      description: "This is a project description",
+      description: "Website that provides UI/UX design services with customer service feature also contact via email real-time send",
       tech: ["React", "Tailwind CSS"],
       image: FAWZIUIUX,
       link: "https://github.com/Ivriel/FAWZIUIUX",
@@ -23,32 +23,32 @@ function Projects() {
     },
     {
       title: "Gideon's Blog",
-      description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      description: "Website client's profile. Provide some information such as school,identity, and etc with real-time clock",
+      tech: ["HTML", "CSS","JAVASCRIPT"],
       image: GIDEONSBLOG,
       link: "https://gideon-blog.vercel.app/",
       repository: "https://github.com/Ivriel/Update-GIDEON-S-BLOG"
     },
     {
       title: "Cuaca",
-      description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      description: "Provide information about weather in 3 place to  find out the weather from tomorrow, 2 and 3 days later",
+      tech: ["HTML", "CSS","AJAX"],
       image: CUACA,
       link: "https://website-cuaca-five.vercel.app/",
       repository: "https://github.com/Ivriel/website-cuaca"
     },
     {
       title: "AWS Qualifier",
-      description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      description: "Website made for participating the Asia Web Slicing qualifier round that made in just 4 hours due to time limitations",
+      tech: ["HTML","CSS"],
       image: AWSQUALIFIER,
       link: "https://aws-qualifier.vercel.app/",
       repository: "https://github.com/Ivriel/AWS-QUALIFIER"
     },
     {
       title: "AWS Final",
-      description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      description:"Website made for participating the Asia Web Slicing final round that made in just 4 hours due to time limitations too",
+      tech: ["HTML","CSS"],
       image: AWSFINAL,
       link: "https://aws-final.vercel.app/",
       repository: "https://github.com/Ivriel/AWS-FINAL"
@@ -56,7 +56,7 @@ function Projects() {
     {
       title: "Polinema Webtech",
       description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      tech: ["HTML","CSS"],
       image: POLINEMA,
       link: "https://polinema-webtech.vercel.app/",
       repository: "https://github.com/Ivriel/POLINEMA-WEBTECH"
@@ -64,7 +64,7 @@ function Projects() {
     {
       title: "Liga SMK",
       description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      tech: ["HTML","CSS"],
       image: LIGASMK,
       link: "https://liga-smk.vercel.app/",
       repository: "https://liga-smk.vercel.app/"
@@ -72,7 +72,7 @@ function Projects() {
     {
       title: "Typemaster",
       description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      tech: ["HTML","CSS"],
       image: TYPEMASTER,
       link: "https://liga-smk.vercel.app/",
       repository: "https://liga-smk.vercel.app/"
@@ -80,7 +80,7 @@ function Projects() {
     {
       title: "Code Community",
       description: "This is a project description",
-      tech: ["React", "Tailwind CSS"],
+      tech: ["HTML","CSS"],
       image: CODECOMMUNITY,
       link: "https://example.com",
       repository: "https://liga-smk.vercel.app/"
@@ -95,7 +95,7 @@ function Projects() {
   return (
     <div className="text-white w-full mt-20 px-[50px] mb-10" id="projects">
   <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px] w-fit">Projects</h1>
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
     {paginatedItems.map((project, index) => (
       <div key={index} className="w-full mt-10">
         <div className="relative group cursor-pointer">

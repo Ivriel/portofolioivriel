@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import UJILEVEL from "../assets/competitions/ligaSMK.png";
+import LIGA from "../assets/competitions/ligaSMK.png";
 import AWS from "../assets/competitions/logoaws.png";
 import PLAYIT from "../assets/competitions/playIT.png";
+import LKS from "../assets/competitions/lksSMK.png"
 
 function Competition() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -12,7 +13,7 @@ function Competition() {
     {
       title: "Liga SMK",
       description: "Kompetisi coding nasional untuk siswa SMK oleh Alcademi",
-      image: UJILEVEL,
+      image: LIGA,
     },
     {
       title: "Asia Web Slicing Challenge",
@@ -24,6 +25,11 @@ function Competition() {
       description: "Kompetisi IT nasional oleh Politeknik Negeri Malang",
       image: PLAYIT,
     },
+    {
+      title: "LKS Tingkat Sekolah",
+      description: "Kompetisi LKS tingkat sekolah di SMK Negeri 8 Malang",
+      image: LKS,
+    },
   ];
 
   return (
@@ -31,7 +37,7 @@ function Competition() {
       <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-full w-fit">
         Competitions
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
         {competitions.map((competition, index) => (
           <Tilt key={index} tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareMaxOpacity={0.2}>
             <motion.div
