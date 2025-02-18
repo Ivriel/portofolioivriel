@@ -8,7 +8,7 @@ import PLAYIT from "../assets/competitions/playIT.png";
 function Competition() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const certificates = [
+  const competitions = [
     {
       title: "Liga SMK",
       description: "Kompetisi coding nasional untuk siswa SMK oleh Alcademi",
@@ -32,24 +32,24 @@ function Competition() {
         Competitions
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-        {certificates.map((certificate, index) => (
+        {competitions.map((competition, index) => (
           <Tilt key={index} tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareMaxOpacity={0.2}>
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               transition={{ type: "spring", stiffness: 500, damping: 15 }}
               className="relative overflow-hidden bg-white/10 backdrop-blur-md rounded-xl p-5 flex flex-col items-center text-center border border-white/20 shadow-lg hover:shadow-2xl hover:border-white/50 transition duration-150 cursor-pointer"
-              onClick={() => setSelectedImage(certificate.image)}
+              onClick={() => setSelectedImage(competition.image)}
             >
               <div className="relative w-full max-w-[400px] h-[280px] rounded-lg overflow-hidden">
                 <img
-                  src={certificate.image}
+                  src={competition.image}
                   className="w-full h-full object-cover transition duration-150 hover:scale-105"
-                  alt={certificate.title}
+                  alt={competition.title}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
-              <h1 className="mt-4 font-bold text-lg  text-white text-glow">{certificate.title}</h1>
-              <p className="text-gray-300">{certificate.description}</p>
+              <h1 className="mt-4 font-bold text-lg  text-white text-glow">{competition.title}</h1>
+              <p className="text-gray-300">{competition.description}</p>
             </motion.div>
           </Tilt>
         ))}
