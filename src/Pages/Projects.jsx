@@ -98,7 +98,7 @@ function Projects() {
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
     {paginatedItems.map((project, index) => (
       <div key={index} className="w-full mt-10">
-        <div className="relative group cursor-pointer">
+        <div className="relative group cursor-pointer">  
           <img src={project.image} className="rounded-xl object-cover w-full h-[250px] transition-all duration-300 group-hover:opacity-30" />
           <div className="w-full flex flex-col sm:flex-row justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <a href={project.link} target="_blank" rel="noopener noreferrer" className="border-2 w-fit px-4 py-2 mb-4 sm:mb-0 sm:mr-4 rounded-[100px] transition-transform transform hover:scale-105 hover:bg-white hover:text-black">
