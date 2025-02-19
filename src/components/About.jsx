@@ -43,7 +43,7 @@ function About(props, ref2) {
       };
 
       animateValue(setProjects, 8, 1000);
-      animateValue(setCompetitions, 2, 1000);
+      animateValue(setCompetitions, 3, 1000);
       animateValue(setCertificates, 2, 1000);
     }
   }, [startAnimation]);
@@ -80,7 +80,7 @@ function About(props, ref2) {
           </div>
         </Link>
         <Link to="/certificates" className="text-white text-center w-full sm:w-fit">
-          <div className="flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-6">                                                                                                                                                     
             <span className="text-[50px] sm:text-[64px] font-bold">{certificates}+</span>
             <span className="text-gray-400">Certificates earned</span>
           </div>

@@ -15,15 +15,15 @@ function Projects() {
   const projectsFile = [
     {
       title: "FAWIUIUX",
-      description: "Website that provides UI/UX design services with customer service feature also contact via email real-time send",
+      description: "Website which provides UI/UX design services with customer service feature also contact via email real-time send.",
       tech: ["React", "Tailwind CSS"],
       image: FAWZIUIUX,
-      link: "https://github.com/Ivriel/FAWZIUIUX",
+      link: "https://fawziuiux.vercel.app/",
       repository: "https://github.com/Ivriel/FAWZIUIUX"
     },
     {
       title: "Gideon's Blog",
-      description: "Website client's profile. Provide some information such as school,identity, and etc with real-time clock",
+      description: "Website client's profile. Provide some information such as school,identity, and etc with real-time clock.",
       tech: ["HTML", "CSS","JAVASCRIPT"],
       image: GIDEONSBLOG,
       link: "https://gideon-blog.vercel.app/",
@@ -31,7 +31,7 @@ function Projects() {
     },
     {
       title: "Cuaca",
-      description: "Provide information about weather in 3 place to  find out the weather from tomorrow, 2 and 3 days later",
+      description: "Provide information about weather in 3 place to  find out the weather from tomorrow, 2 and 3 days later.",
       tech: ["HTML", "CSS","AJAX"],
       image: CUACA,
       link: "https://website-cuaca-five.vercel.app/",
@@ -39,7 +39,7 @@ function Projects() {
     },
     {
       title: "AWS Qualifier",
-      description: "Website made for participating the Asia Web Slicing qualifier round that made in just 4 hours due to time limitations",
+      description: "Website made for participating the Asia Web Slicing qualifier round which made in just 4 hours due to time limitations.",
       tech: ["HTML","CSS"],
       image: AWSQUALIFIER,
       link: "https://aws-qualifier.vercel.app/",
@@ -47,7 +47,7 @@ function Projects() {
     },
     {
       title: "AWS Final",
-      description:"Website made for participating the Asia Web Slicing final round that made in just 4 hours due to time limitations too",
+      description:"Website made for participating the Asia Web Slicing final round which made in just 4 hours due to time limitations too.",
       tech: ["HTML","CSS"],
       image: AWSFINAL,
       link: "https://aws-final.vercel.app/",
@@ -55,7 +55,7 @@ function Projects() {
     },
     {
       title: "Polinema Webtech",
-      description: "This is a project description",
+      description: "Website which made to participating in LKS. Designed and builded just in 4 hours due to competition limit time.",
       tech: ["HTML","CSS"],
       image: POLINEMA,
       link: "https://polinema-webtech.vercel.app/",
@@ -63,27 +63,27 @@ function Projects() {
     },
     {
       title: "Liga SMK",
-      description: "This is a project description",
+      description: "Website which made to participating in national vocational school league. Made in just 3 hours. ",
       tech: ["HTML","CSS"],
       image: LIGASMK,
       link: "https://liga-smk.vercel.app/",
-      repository: "https://liga-smk.vercel.app/"
+      repository: "https://github.com/Ivriel/LIGA-SMK"
     },
     {
       title: "Typemaster",
-      description: "This is a project description",
+      description: "Website which made for completing industrial assignment. This website show and sell various keyboards.",
       tech: ["HTML","CSS"],
       image: TYPEMASTER,
-      link: "https://liga-smk.vercel.app/",
-      repository: "https://liga-smk.vercel.app/"
+      link: "https://typemaster-peach.vercel.app/",
+      repository: "https://github.com/Ivriel/TYPEMASTER-KEYBOARD"
     },
     {
       title: "Code Community",
-      description: "This is a project description",
+      description: "Simple website which made just for learning by doing. With the concept about programmer community.",
       tech: ["HTML","CSS"],
       image: CODECOMMUNITY,
-      link: "https://example.com",
-      repository: "https://liga-smk.vercel.app/"
+      link: "https://code-community-lime.vercel.app/",
+      repository: "https://github.com/Ivriel/CODE-Community"
     }
   ];
 
