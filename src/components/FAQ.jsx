@@ -38,7 +38,7 @@ function FAQ(props,ref3) {
     },
     { 
       question: "Mengapa tertarik dalam bidang Frontend Web Development?", 
-      answer: "Karena saya sudah terbiasa dengan HTML, CSS, dan JavaScript dasar. Saya lebih suka membuat tampilan daripada mengatur logika atau database pada sebuah website." 
+      answer: "Karena saya sudah terbiasa dengan HTML, CSS, dan JavaScript dasar. Saya lebih suka membuat tampilan website." 
     },
     { 
       question: "Apa saja skill teknis yang dikuasai?", 

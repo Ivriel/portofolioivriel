@@ -10,7 +10,7 @@ function Header({ scrollToSection, refs }) {
   };
 
   return (
-    <div className="text-white flex">
+    <div className="text-white flex h-full">
       <nav className="flex items-center justify-between fixed h-[68px] z-[10] top-0 left-0 right-0 bg-[#151515] px-[20px] lg:px-[50px]">
         <span className="flex items-center">
           <a href="/" className="p-0 m-0 font-medium text-[20px]" title='Homepage'>

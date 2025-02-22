@@ -50,15 +50,15 @@ function About(props, ref2) {
 
 
   return (
-    <div ref={ref2} className="mt-[70px] text-white px-6 lg:px-0" id="about">
-      <div className="flex flex-col lg:flex-row justify-between w-full">
-        <div>
-        <h1 data-aos="flip-up" data-aos-duration="1000" className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px] w-max mb-6">
+    <div ref={ref2} className="mt-[70px] text-white md:px-6 lg:px-0" id="about">
+      <div className="flex flex-col md:flex-row justify-between w-full">
+        <div className="flex justify-center md:justify-start">
+        <h1 data-aos="flip-up" data-aos-duration="1000" className="font-medium text-[28px] border-white border-[1px] px-8 py-2 h-fit rounded-[100px] w-max mb-6 md:text-center">
         About Me
         </h1>
         </div>
         <div>
-          <p className="text-justify sm:w-[600px] md:w-[700px] lg:w-[850px] max-w-full px-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
+          <p className="text-justify  max-w-full px-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
             Saya adalah siswa di SMKN 8 Malang yang sedang menempuh pendidikan di jurusan Rekayasa Perangkat Lunak. Saya tertarik dengan dunia pemrograman dan menjadi seorang Frontend Web Developer.
             Saya memiliki kemampuan dalam membuat website berdasarkan desain yang diberikan. Saya juga memiliki kemampuan dalam menggunakan HTML, CSS, dan JavaScript.
             Saya menggunakan framework React dan juga Tailwind CSS sebagai tools utama dalam pembuatan website.

@@ -60,7 +60,7 @@ function Project(props, ref) {
           data-aos-duration="600"
           data-aos-delay="300"
         >
-          <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors">
+          <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors hidden md:flex">
             See More
           </p>
           <ArrowRight className="w-6 h-6 text-white group-hover:text-gray-400 transition-colors" />
@@ -68,11 +68,11 @@ function Project(props, ref) {
       </div>
       <div>
         {projects.map((project, index) => (
-          <div key={index} className={["flex gap-14 mt-20", index % 2 === 1 ? "flex-row-reverse" : "flex-row"].join(" ")}>
-            <img src={project.image} className="rounded-xl w-[500px]" data-aos="flip-up" data-aos-delay="600"/>
+          <div key={index} className={["lg:flex gap-14 mt-20", index % 2 === 1 ? "flex-row-reverse" : "flex-row"].join(" ")}>
+            <img src={project.image} className="rounded-xl lg:max-w-[500px]" data-aos="flip-up" data-aos-delay="600"/>
             <div>
-              <h1 className="text-[34px] font-semibold" data-aos="zoom-in-left" data-aos-delay="700">{project.title}</h1>
-              <p className="text-[18px] mt-4" data-aos="zoom-in-up" data-aos-delay="900">{project.description}</p>
+              <h1 className="md:text-[34px] font-semibold lg:mt-0 mt-6 text-[22px]" data-aos="zoom-in-left" data-aos-delay="700">{project.title}</h1>
+              <p className="md:text-[18px] mt-2 text-[15px]" data-aos="zoom-in-up" data-aos-delay="900">{project.description}</p>
               <div className="flex gap-4 mt-4" data-aos="fade-up" data-aos-delay="1000">
                 {project.tech.map((tech, index) => (
                   <ChipText key={index} text={tech} />
