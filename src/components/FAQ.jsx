@@ -33,25 +33,25 @@ FAQItem.propTypes = {
 function FAQ(props,ref3) {
   const faqs = [
     { 
-      question: "Apa minat utama dan kegiatan yang dilakukan?",
-      answer: "Berminat dalam bidang Frontend Web Development dan membuat website berdasarkan design yang diberikan." 
+      "question": "What are your main interests and activities?", 
+      "answer": "I am interested in Frontend Web Development and developing websites based on provided designs." 
     },
     { 
-      question: "Mengapa tertarik dalam bidang Frontend Web Development?", 
-      answer: "Karena saya sudah terbiasa dengan HTML, CSS, dan JavaScript dasar. Saya lebih suka membuat tampilan website." 
+      "question": "Why are you interested in Frontend Web Development?", 
+      "answer": "Because I am already familiar with basic HTML, CSS, and JavaScript. I enjoy designing and building website interfaces." 
     },
     { 
-      question: "Apa saja skill teknis yang dikuasai?", 
-      answer: "HTML dan CSS Native diikuti dengan React JS dan juga Tailwind CSS." 
+      "question": "What technical skills do you possess?", 
+      "answer": "Proficiency in native HTML and CSS, followed by React.js and Tailwind CSS." 
     },
     { 
-      question: "Kapan mulai mengenal dunia coding?", 
-      answer: "Dimulai sejak di jenjang SMP menggunakan React JS kemudian mulai serius di kelas 10 SMK." 
+      "question": "When did you start learning about coding?", 
+      "answer": "I started during junior high school using React.js and became more serious in my first year of vocational high school." 
     },
     { 
-      question: "Apa tools favorit yang digunakan untuk membuat website?", 
-      answer: "React JS dan juga Tailwind CSS" 
-    },
+      "question": "What are your favorite tools for web development?", 
+      "answer": "React.js and Tailwind CSS." 
+    }    
   ];
 
   return (

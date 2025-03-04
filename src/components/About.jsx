@@ -59,9 +59,10 @@ function About(props, ref2) {
         </div>
         <div>
           <p className="text-justify  max-w-full px-4" data-aos="flip-left" data-aos-duration="600" data-aos-delay="400">
-            Saya adalah siswa di SMKN 8 Malang yang sedang menempuh pendidikan di jurusan Rekayasa Perangkat Lunak. Saya tertarik dengan dunia pemrograman dan menjadi seorang Frontend Web Developer.
-            Saya memiliki kemampuan dalam membuat website berdasarkan desain yang diberikan. Saya juga memiliki kemampuan dalam menggunakan HTML, CSS, dan JavaScript.
-            Saya menggunakan framework React dan juga Tailwind CSS sebagai tools utama dalam pembuatan website.
+          I am a student at State Vocational High School 8 Malang, currently pursuing a major in Software Engineering. 
+          I have a strong interest in programming and aspire to become a Frontend Web Developer.
+          I am proficient in developing websites based on provided designs and have expertise in HTML, CSS, and JavaScript. 
+          Additionally, I utilize the React framework and Tailwind CSS as my primary tools for web development.
           </p>
         </div>
       </div>
