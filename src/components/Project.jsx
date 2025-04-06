@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import ArrowRight from "./ArrowRight";
-import Fawziuiux from "../assets/projects/FAWZIUIUXPICTURE.png";
+import Shankara from "../assets/projects/SHANKARAPICTURE.png";
 import Gideonsblog from "../assets/projects/GIDEONSBLOGPICTURE.png";
 import Cuaca from "../assets/projects/CUACAPICTURE.png";
 import GithubIcon from "./GithubIcon";
@@ -12,15 +12,15 @@ function Project(props, ref) {
 
   const projects = [
     {
-      image: Fawziuiux,
-      title: "Fawzuiux",
-      description: "Fawziuiux is a website that provides UI/UX design services. This website is made using ReactJS and TailwindCSS.",
+      image: Shankara,
+      title: "Shankara Paperstraw",
+      description: "Shankara Paperstraw is a company that produces paper straws. This landing page website is to promote their product and company.",
       tech: [
-        "React JS",
+        "Next JS",
         "Tailwind CSS"
       ],
-      link: "https://fawziuiux.vercel.app/",
-      repository: "https://github.com/Ivriel/FAWZIUIUX"
+      link: "https://www.shankarapaperstraw.com/",
+      repository: "https://github.com/Ivriel/shankara-paperstraw"
     },
     {
       image: Gideonsblog,
