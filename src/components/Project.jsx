@@ -14,7 +14,7 @@ function Project(props, ref) {
     {
       image: Shankara,
       title: "Shankara Paperstraw",
-      description: "Shankara Paperstraw is a company that produces paper straws. This landing page website is to promote their product and company.",
+      description: "Shankara Paperstraw is a company that produces paper straw for pre rolled cones industry.",
       tech: [
         "Next JS",
         "Tailwind CSS"
