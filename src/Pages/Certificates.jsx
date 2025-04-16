@@ -4,6 +4,7 @@ import Tilt from "react-parallax-tilt";
 import UJILEVEL from "../assets/certificates/SertifUjiLevel.jpg";
 import AWS from "../assets/certificates/SertifAWS.jpg";
 import PLAYIT from "../assets/certificates/PlayIT.png";
+import ANGULAR from "../assets/certificates/SertifUdemy.jpg"
 
 function Certificates() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -24,6 +25,11 @@ function Certificates() {
       description: "Sertifikat kompetisi kategori pengembangan website",
       image: PLAYIT,
     },
+    {
+      title:"Pembelajaran Framework Angular",
+      description: "Sertifikat pembelajaran framework angular oleh UDEMY",
+      image:ANGULAR
+    }
   ];
 
   return (
