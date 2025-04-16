@@ -27,7 +27,7 @@ function Certificates() {
     },
     {
       title:"Pembelajaran Framework Angular",
-      description: "Sertifikat pembelajaran framework angular oleh UDEMY",
+      description: "Sertifikat pembelajaran framework Angular JS oleh UDEMY",
       image:ANGULAR
     }
   ];
