@@ -5,6 +5,7 @@ import UJILEVEL from "../assets/certificates/SertifUjiLevel.jpg";
 import AWS from "../assets/certificates/SertifAWS.jpg";
 import PLAYIT from "../assets/certificates/PlayIT.png";
 import ANGULAR from "../assets/certificates/SertifUdemy.jpg"
+import FLUTTER from "../assets/certificates/SertifUdemy2.jpg";
 
 function Certificates() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -29,6 +30,11 @@ function Certificates() {
       title:"Pembelajaran Framework Angular",
       description: "Sertifikat pembelajaran framework Angular JS oleh UDEMY",
       image:ANGULAR
+    },
+    {
+      title:"Pembelajaran Framework Flutter (UI)",
+      description: "Sertifikat pembelajaran pembuatan UI dengan Flutter oleh UDEMY",
+      image:FLUTTER
     }
   ];
 
