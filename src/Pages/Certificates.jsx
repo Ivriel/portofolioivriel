@@ -6,6 +6,7 @@ import AWS from "../assets/certificates/SertifAWS.jpg";
 import PLAYIT from "../assets/certificates/PlayIT.png";
 import ANGULAR from "../assets/certificates/SertifUdemy.jpg"
 import FLUTTER from "../assets/certificates/SertifUdemy2.jpg";
+import FULLSTACK from "../assets/certificates/SertifUdemy3.png";
 
 function Certificates() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -35,6 +36,11 @@ function Certificates() {
       title:"Pembelajaran Framework Flutter (UI)",
       description: "Sertifikat pembelajaran pembuatan UI dengan Flutter oleh UDEMY",
       image:FLUTTER
+    },
+    {
+      title:'Pembelajaran Fullstack Web',
+      description:"Sertifikat pembelajaran Angular dan .NET oleh UDEMY",
+      image:FULLSTACK
     }
   ];
 
