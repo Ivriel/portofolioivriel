@@ -7,6 +7,7 @@ import PLAYIT from "../assets/certificates/PlayIT.png";
 import ANGULAR from "../assets/certificates/SertifUdemy.jpg"
 import FLUTTER from "../assets/certificates/SertifUdemy2.jpg";
 import FULLSTACK from "../assets/certificates/SertifUdemy3.png";
+import PKL from "../assets/certificates/SertifPKL.jpg";
 
 function Certificates() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -41,6 +42,11 @@ function Certificates() {
       title:'Pembelajaran Fullstack Web',
       description:"Sertifikat pembelajaran Angular dan .NET oleh UDEMY",
       image:FULLSTACK
+    },
+    {
+      title:'Sertifikat PKL',
+      description:"Sertifikat PKL (Internship) di 3PM Solution",
+      image:PKL
     }
   ];
 
