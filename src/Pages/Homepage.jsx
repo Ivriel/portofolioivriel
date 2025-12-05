@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Header from "../components/Header.jsx";
 import Home from "../components/Home.jsx";
 import About from "../components/About.jsx";
@@ -6,7 +6,6 @@ import Project from "../components/Project.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Contact from "../components/Contact.jsx";
 import Footer from "../components/Footer.jsx";
-import NoInternet from "./Nointernet.jsx";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 
@@ -17,22 +16,7 @@ function Homepage() {
       once: true, // Animasi hanya muncul sekali
     });
   }, []);
-  const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
-  useEffect(() => {
-    const handleOffline = () => setIsOffline(true);
-    const handleOnline = () => setIsOffline(false);
-
-    window.addEventListener("offline", handleOffline);
-    window.addEventListener("online", handleOnline);
-
-    return () => {
-      window.removeEventListener("offline", handleOffline);
-      window.removeEventListener("online", handleOnline);
-    };
-  }, []);
-
-  // ✅ Hooks harus selalu dipanggil di bagian atas, tidak boleh di dalam if
   const ref = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
@@ -42,11 +26,6 @@ function Homepage() {
   const scrollToSection = (sectionRef) => {
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
-
-  // ✅ Hanya render NoInternet jika offline
-  if (isOffline) {
-    return <NoInternet />;
-  }
 
   return (
     <div className="px-[50px]">
