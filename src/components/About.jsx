@@ -44,7 +44,7 @@ function About(props, ref2) {
 
       animateValue(setProjects, 8, 1000);
       animateValue(setCompetitions, 3, 1000);
-      animateValue(setCertificates, 5, 1000);
+      animateValue(setCertificates, 7, 1000);
     }
   }, [startAnimation]);
 
