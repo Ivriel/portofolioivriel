@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
+import { ArrowLeft, ZoomIn } from "lucide-react";
 import LIGA from "../assets/competitions/ligaSMK.png";
 import AWS from "../assets/competitions/logoaws.png";
 import PLAYIT from "../assets/competitions/playIT.png";
-import LKS from "../assets/competitions/lksSMK.png"
+import LKS from "../assets/competitions/lksSMK.png";
 
 function Competition() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -32,52 +34,111 @@ function Competition() {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
+
   return (
-    <div className="text-white mt-20 w-full px-5 sm:px-10 lg:px-20 mb-10" id="certificates">
-      <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-full w-fit">
-        Competitions
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-20">
+    <div className="min-h-screen text-white pt-10 pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto" id="competitions">
+      {/* Header & Navigation */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6"
+      >
+        <Link 
+          to="/" 
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass-panel hover:bg-white/10 transition-colors group w-fit"
+        >
+          <ArrowLeft className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+          <span className="font-medium text-gray-300 group-hover:text-white transition-colors">Back to Home</span>
+        </Link>
+        
+        <div className="inline-block border border-glass-border px-8 py-3 rounded-full glass-panel h-fit">
+          <h1 className="font-semibold text-[24px] tracking-wide text-white">
+            Competitions
+          </h1>
+        </div>
+      </motion.div>
+
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {competitions.map((competition, index) => (
-          <Tilt key={index} tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareMaxOpacity={0.2}>
+          <Tilt key={index} tiltMaxAngleX={5} tiltMaxAngleY={5} glareEnable={true} glareMaxOpacity={0.1} className="h-full">
             <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ type: "spring", stiffness: 500, damping: 15 }}
-              className="relative overflow-hidden bg-white/10 backdrop-blur-md rounded-xl p-5 flex flex-col items-center text-center border border-white/20 shadow-lg hover:shadow-2xl hover:border-white/50 transition duration-150 cursor-pointer"
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="glass-panel group overflow-hidden flex flex-col h-full rounded-[2rem] relative cursor-pointer"
               onClick={() => setSelectedImage(competition.image)}
             >
-              <div className="relative w-full max-w-[400px] h-[280px] rounded-lg overflow-hidden">
+              {/* Image Container */}
+              <div className="relative w-full aspect-square md:aspect-[4/3] p-6 bg-white/5 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={competition.image}
-                  className="w-full h-full object-cover transition duration-150 hover:scale-105"
+                  className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out relative z-0"
                   alt={competition.title}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                
+                {/* Zoom Icon Overlay */}
+                <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60 backdrop-blur-md p-2.5 rounded-full text-white">
+                  <ZoomIn className="w-5 h-5" />
+                </div>
               </div>
-              <h1 className="mt-4 font-bold text-lg  text-white text-glow">{competition.title}</h1>
-              <p className="text-gray-300">{competition.description}</p>
+
+              {/* Content */}
+              <div className="p-8 flex flex-col flex-grow relative bg-gradient-to-b from-transparent to-black/20 text-center">
+                <h2 className="text-[22px] font-bold tracking-tight text-white mb-3 group-hover:text-gray-300 transition-colors">
+                  {competition.title}
+                </h2>
+                <p className="text-gray-400 text-[15px] leading-relaxed flex-grow">
+                  {competition.description}
+                </p>
+              </div>
             </motion.div>
           </Tilt>
         ))}
-      </div>
+      </motion.div>
       
-      {/* pop up gambar */}
+      {/* Pop up Image Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-[100] p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
-              className="relative max-w-3xl w-full p-5"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              className="relative max-w-4xl w-full"
+              initial={{ scale: 0.9, y: 20, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 20, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()}
             >
-              <img src={selectedImage} className="w-full rounded-lg" alt="Certificate" />
+              <button 
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 md:-right-12 text-white/70 hover:text-white p-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+              <img src={selectedImage} className="w-full h-auto rounded-xl shadow-2xl" alt="Competition detail" />
             </motion.div>
           </motion.div>
         )}

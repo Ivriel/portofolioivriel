@@ -1,26 +1,30 @@
-import ChipText from "../components/ChipText"
-import FAWZIUIUX from "../assets/projects/FAWZIUIUXPICTURE.png"
-import GIDEONSBLOG from "../assets/projects/GIDEONSBLOGPICTURE.png"
-import CUACA from "../assets/projects/CUACAPICTURE.png"
-import AWSQUALIFIER from "../assets/projects/AWSQUALIFIERPICTURE.png"
-import AWSFINAL from "../assets/projects/AWSFINALPICTURE.png"
-import POLINEMA from "../assets/projects/POLINEMAPICTURE.png"
-import LIGASMK from "../assets/projects/LIGASMKPICTURE.png"
-import TYPEMASTER from "../assets/projects/TYPEMASTERPICTURE.png"
-import CODECOMMUNITY from "../assets/projects/CODECOMMUNITYPICTURE.png"
-import SHANKARA from "../assets/projects/SHANKARAPICTURE.png"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ArrowLeft } from "lucide-react";
+import GithubIcon from "../components/GithubIcon";
+import LinkIcon from "../components/LinkIcon";
+
+import FAWZIUIUX from "../assets/projects/FAWZIUIUXPICTURE.png";
+import GIDEONSBLOG from "../assets/projects/GIDEONSBLOGPICTURE.png";
+import CUACA from "../assets/projects/CUACAPICTURE.png";
+import AWSQUALIFIER from "../assets/projects/AWSQUALIFIERPICTURE.png";
+import AWSFINAL from "../assets/projects/AWSFINALPICTURE.png";
+import POLINEMA from "../assets/projects/POLINEMAPICTURE.png";
+import LIGASMK from "../assets/projects/LIGASMKPICTURE.png";
+import TYPEMASTER from "../assets/projects/TYPEMASTERPICTURE.png";
+import CODECOMMUNITY from "../assets/projects/CODECOMMUNITYPICTURE.png";
+import SHANKARA from "../assets/projects/SHANKARAPICTURE.png";
 
 function Projects() {
   const projectsFile = [
     {
       title: "Shankara Paperstraw",
-      description: "Company landing page website to promote their product and their company.", // Update description
+      description: "Company landing page website to promote their product and their company.",
       tech: ["Next JS", "Tailwind CSS"],
-      image: SHANKARA, // You'll need to import this image
+      image: SHANKARA,
       link: "https://www.shankarapaperstraw.com/",
-      repository: "https://github.com/Ivriel/shankara-paperstraw" // Update with actual repository
+      repository: "https://github.com/Ivriel/shankara-paperstraw"
     },
     {
       title: "FAWIUIUX",
@@ -40,7 +44,7 @@ function Projects() {
     },
     {
       title: "Cuaca",
-      description: "Provide information about weather in 3 place to  find out the weather from tomorrow, 2 and 3 days later.",
+      description: "Provide information about weather in 3 place to find out the weather from tomorrow, 2 and 3 days later.",
       tech: ["HTML", "CSS", "AJAX"],
       image: CUACA,
       link: "https://website-cuaca-five.vercel.app/",
@@ -72,7 +76,7 @@ function Projects() {
     },
     {
       title: "Liga SMK",
-      description: "Website which made to participating in national vocational school league. Made in just 3 hours. ",
+      description: "Website which made to participating in national vocational school league. Made in just 3 hours.",
       tech: ["HTML", "CSS"],
       image: LIGASMK,
       link: "https://liga-smk.vercel.app/",
@@ -97,51 +101,144 @@ function Projects() {
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = currentPage === 1 ? 6 : 6;
-  const startIndex = currentPage === 1 ? 0 : 6; // Page 1 starts at index 0, Page 2 starts at index 6
+  const itemsPerPage = 6;
+  const startIndex = (currentPage - 1) * itemsPerPage;
   const paginatedItems = projectsFile.slice(startIndex, startIndex + itemsPerPage);
+  const totalPages = Math.ceil(projectsFile.length / itemsPerPage);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
 
   return (
-    <div className="text-white w-full mt-20 px-[50px] mb-10" id="projects">
-      <h1 className="font-medium text-[28px] border-white border-[1px] px-8 py-2 rounded-[100px] w-fit">Projects</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+    <div className="min-h-screen text-white pt-10 pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+      {/* Header & Navigation */}
+      <motion.div 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6"
+      >
+        <Link 
+          to="/" 
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass-panel hover:bg-white/10 transition-colors group w-fit"
+        >
+          <ArrowLeft className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
+          <span className="font-medium text-gray-300 group-hover:text-white transition-colors">Back to Home</span>
+        </Link>
+        
+        <div className="inline-block border border-glass-border px-8 py-3 rounded-full glass-panel h-fit">
+          <h1 className="font-semibold text-[24px] tracking-wide text-white">
+            All Projects
+          </h1>
+        </div>
+      </motion.div>
+
+      {/* Projects Grid */}
+      <motion.div 
+        key={currentPage} // Forces re-animation on page change
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {paginatedItems.map((project, index) => (
-          <div key={index} className="w-full mt-10">
-            <div className="relative group cursor-pointer">
-              <img src={project.image} className="rounded-xl object-cover w-full h-[250px] transition-all duration-300 group-hover:opacity-30" />
-              <div className="w-full flex flex-col sm:flex-row justify-center items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="border-2 w-fit px-4 py-2 mb-4 sm:mb-0 sm:mr-4 rounded-[100px] transition-transform transform hover:scale-105 hover:bg-white hover:text-black">
-                  View Site
+          <motion.div 
+            key={index} 
+            variants={itemVariants}
+            whileHover={{ y: -10 }}
+            className="glass-panel group overflow-hidden flex flex-col h-full rounded-[2rem]"
+          >
+            {/* Project Image Box */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-[2rem]">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" 
+              />
+              
+              {/* Quick Links Overlay */}
+              <div className="absolute top-4 right-4 flex gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-[-10px] group-hover:translate-y-0">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black/60 backdrop-blur-md p-2.5 rounded-full hover:bg-white text-white hover:text-black transition-all"
+                  title="View Live Site"
+                >
+                  <LinkIcon className="w-5 h-5" />
                 </a>
-                <a href={project.repository} target="_blank" rel="noopener noreferrer" className="border-2 w-fit px-4 py-2 rounded-[100px] transition-transform transform hover:scale-105 hover:bg-white hover:text-black">
-                  View Repository
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black/60 backdrop-blur-md p-2.5 rounded-full hover:bg-white text-white hover:text-black transition-all"
+                  title="View Repository"
+                >
+                  <GithubIcon className="w-5 h-5 fill-current" />
                 </a>
               </div>
             </div>
-            <h2 className="text-[24px] font-bold mt-4">{project.title}</h2>
-            <p className="text-[18px] mt-4 ">{project.description}</p>
-            <div className="flex gap-4 mt-4">
-              {project.tech.map((tech, index) => (<ChipText key={index} text={tech} />))}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="flex justify-center space-x-4 mt-20">
-        {[1, 2].map((page) => (
-          <motion.button
-            key={page}
-            onClick={() => setCurrentPage(page)}
-            disabled={currentPage === page}
-            className={`px-4 py-1 border rounded-lg text-lg font-semibold transition-transform transform ${currentPage === page ? "bg-[#ffffff] text-black cursor-not-allowed" : "bg-[#ffffffBA] text-black hover:bg-white active:scale-90"}`}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {page}
-          </motion.button>
-        ))}
-      </div>
-    </div>
 
+            {/* Project Info */}
+            <div className="p-8 flex flex-col flex-grow relative bg-gradient-to-b from-transparent to-black/20">
+              <h2 className="text-[24px] font-bold tracking-tight text-white mb-3 group-hover:text-gray-300 transition-colors">
+                {project.title}
+              </h2>
+              <p className="text-gray-400 text-[15px] leading-relaxed mb-8 flex-grow">
+                {project.description}
+              </p>
+              
+              {/* Tech Stack Chips */}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech, idx) => (
+                  <div key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-gray-300 tracking-wide">
+                    {tech}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="flex justify-center items-center space-x-3 mt-20"
+        >
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => {
+                setCurrentPage(page);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`w-12 h-12 flex items-center justify-center rounded-full text-lg font-medium transition-all duration-300 ${
+                currentPage === page 
+                  ? "bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
+                  : "glass-panel text-gray-400 hover:text-white hover:bg-white/10"
+              }`}
+            >
+              {page}
+            </button>
+          ))}
+        </motion.div>
+      )}
+    </div>
   );
 }
 
