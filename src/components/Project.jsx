@@ -5,8 +5,8 @@ import Gideonsblog from "../assets/projects/GIDEONSBLOGPICTURE.png";
 import Cuaca from "../assets/projects/CUACAPICTURE.png";
 import GithubIcon from "./GithubIcon";
 import LinkIcon from "./LinkIcon";
-import ChipText from "./ChipText";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Project(props, ref) {
 
@@ -45,73 +45,117 @@ function Project(props, ref) {
       link: "https://website-cuaca-five.vercel.app/",
       repository: "https://github.com/Ivriel/website-cuaca"
     }
-  ]
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
 
   return (
-    <div ref={ref} className="text-white w-full mt-40" id="project">
-      <div className="flex justify-between w-full items-center" data-aos="zoom-in" data-aos-duration="600">
-        <h1 className="font-medium text-[28px] border border-white px-8 py-2 rounded-full">
-          Projects
-        </h1>
-        <Link
-          className="group flex items-center gap-2 cursor-pointer transition-colors"
-          to="/projects"
-          data-aos="zoom-out" 
-          data-aos-duration="600"
-          data-aos-delay="300"
-        >
-          <p className="text-[18px] text-white group-hover:text-gray-400 transition-colors hidden md:flex">
-            See More
-          </p>
-          <ArrowRight className="w-6 h-6 text-white group-hover:text-gray-400 transition-colors" />
-        </Link>
+    <motion.div 
+      ref={ref} 
+      className="text-white w-full pt-24" 
+      id="project"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <div className="flex justify-between w-full items-center mb-16">
+        <motion.div variants={itemVariants} className="inline-block border border-glass-border px-8 py-3 rounded-full glass-panel h-fit">
+          <h1 className="font-semibold text-[24px] tracking-wide text-white">
+            Featured Projects
+          </h1>
+        </motion.div>
+        
+        <motion.div variants={itemVariants}>
+          <Link
+            className="group flex items-center gap-2 cursor-pointer p-2 rounded-full hover:bg-white/5 transition-colors"
+            to="/projects"
+          >
+            <p className="text-[16px] text-gray-300 group-hover:text-white transition-colors hidden md:block font-medium tracking-wide">
+              View All
+            </p>
+            <div className="bg-white/10 p-2 rounded-full group-hover:bg-white transition-colors">
+              <ArrowRight className="w-5 h-5 text-white group-hover:text-black transition-colors" />
+            </div>
+          </Link>
+        </motion.div>
       </div>
-      <div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className={["lg:flex gap-14 mt-20", index % 2 === 1 ? "flex-row-reverse" : "flex-row"].join(" ")}>
-            <img src={project.image} className="rounded-xl lg:max-w-[500px]" data-aos="flip-up" data-aos-delay="600"/>
-            <div>
-              <h1 className="md:text-[34px] font-semibold lg:mt-0 mt-6 text-[22px]" data-aos="zoom-in-left" data-aos-delay="700">{project.title}</h1>
-              <p className="md:text-[18px] mt-2 text-[15px]" data-aos="zoom-in-up" data-aos-delay="900">{project.description}</p>
-              <div className="flex gap-4 mt-4" data-aos="fade-up" data-aos-delay="1000">
-                {project.tech.map((tech, index) => (
-                  <ChipText key={index} text={tech} />
-                ))}
-              </div>
-              <div className="flex gap-4 mt-4">
+          <motion.div 
+            key={index} 
+            variants={itemVariants}
+            whileHover={{ y: -10 }}
+            className="glass-panel group overflow-hidden flex flex-col h-full rounded-[2rem]"
+          >
+            {/* Project Image Box */}
+            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-t-[2rem]">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" 
+              />
+              
+              {/* Quick Links Overlay */}
+              <div className="absolute top-4 right-4 flex gap-2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-[-10px] group-hover:translate-y-0">
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-aos="zoom-out"
-                  data-aos-delay="1100"
-                  className="group flex items-center gap-2 cursor-pointer text-white hover:text-gray-400 transition-colors duration-0"
+                  className="bg-black/60 backdrop-blur-md p-2.5 rounded-full hover:bg-white text-white hover:text-black transition-all"
+                  title="View Live Site"
                 >
-                  <LinkIcon className="w-6 h-6 text-white group-hover:text-gray-400 transition-colors duration-0" />
-                  <span className="group-hover:text-gray-400 transition-colors duration-0">
-                    View Site
-                  </span>
+                  <LinkIcon className="w-5 h-5" />
                 </a>
-              </div>
-              <div className="flex gap-4 mt-4">
                 <a
                   href={project.repository}
                   target="_blank"
-                   data-aos="zoom-out"
-                  data-aos-delay="1200"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 cursor-pointer transition-colors text-white hover:text-gray-600"
+                  className="bg-black/60 backdrop-blur-md p-2.5 rounded-full hover:bg-white text-white hover:text-black transition-all"
+                  title="View Repository"
                 >
-                  <GithubIcon className="transition-colors group-hover:text-gray-600" />
-                  <span className="transition-colors group-hover:text-gray-600">View Repository</span>
+                  <GithubIcon className="w-5 h-5 fill-current" />
                 </a>
               </div>
             </div>
-          </div>
+
+            {/* Project Info */}
+            <div className="p-8 flex flex-col flex-grow relative bg-gradient-to-b from-transparent to-black/20">
+              <h2 className="text-[24px] font-bold tracking-tight text-white mb-3 group-hover:text-gray-300 transition-colors">
+                {project.title}
+              </h2>
+              <p className="text-gray-400 text-[15px] leading-relaxed mb-8 flex-grow">
+                {project.description}
+              </p>
+              
+              {/* Tech Stack Chips */}
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tech.map((tech, idx) => (
+                  <div key={idx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-gray-300 tracking-wide">
+                    {tech}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         ))}
       </div>
-
-    </div>
+    </motion.div>
   );
 }
 
